@@ -1,17 +1,19 @@
 import React from "react";
 import "../styles/Home.css";
 
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
+import experienceImg from "../assets/images/experience.png";
 import heroImg from "../assets/images/hero-img01.jpg";
 import heroImg02 from "../assets/images/hero-img02.jpg";
 import heroVideo from "../assets/images/hero-video.mp4";
 import worldImg from "../assets/images/world.png";
-import experienceImg from "../assets/images/experience.png"
-import Subtitle from "../shared/Subtitle";
-import SearchBar from "../shared/SearchBar";
-import ServiceList from "../services/ServiceList";
-import FeaturedTourList from "../components/featured-tours/FeaturedTourList";
 import MasonryImagesGallery from "../components/Image-gallery/MasonryImagesGallery";
+import FeaturedTourList from "../components/featured-tours/FeaturedTourList";
+import ServiceList from "../services/ServiceList";
+import SearchBar from "../shared/SearchBar";
+import Subtitle from "../shared/Subtitle";
+import Testimonials from "../components/Testimonial/Testimonials";
+import Newsletter from "../shared/Newsletter";
 const Home = () => {
   return  <>
    <section>
@@ -133,10 +135,28 @@ const Home = () => {
      </Row>
     </Container>
   </section>
-
-
-
   {/*===========gallery Section end ==========  */}
+
+  {/*===========Testimonial Section end ==========  */}
+  <section>
+    <Container>
+       <Row>
+
+       <Col lg="12">
+       <Subtitle subtitle={"Fans Love"} />
+       <h2 className="testimonial__title"> What our fans say about us</h2>
+       </Col>
+       <Col lg="12">
+       <Testimonials />
+       </Col>
+       
+       </Row>
+    </Container>
+  
+  </section>
+
+  {/*===========Testimonial Section end ==========  */}
+<Newsletter />
 
 </>
   
