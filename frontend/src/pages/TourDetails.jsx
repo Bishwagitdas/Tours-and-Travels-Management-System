@@ -5,6 +5,7 @@ import tourData from "../assets/data/tours"
 import avater from "../assets/images/avatar.jpg"
 import "../styles/tour-details.css"
 import calculateAvgRating from "../utils/avgRating"
+import Booking from "../components/booking/Booking"
 
 const TourDetails = () => {
   
@@ -23,7 +24,7 @@ const TourDetails = () => {
   const submitHandler = e=>{
     e.preventDefault()
     const reviewText = reviewMsgRef.current.value;
-    alert(`${reviewText}, ${tourRating}`);
+   //  alert(`${reviewText}, ${tourRating}`);
 
     //api call
   }
@@ -42,7 +43,7 @@ const TourDetails = () => {
                <h2>{title}</h2>
                <div className="d-flex align-items-center gap-5">
                <span className="tour__rating d-flex align-items-center gap-1">
-                <i class="ri-star-s-fill" style={{color:"var(--secondary-color)"}}></i> {calculateAvgRating=== 0 ? null : avgRating}
+                <i class="ri-star-s-fill" style={{color:"var(--secondary-color)"}}></i> {avgRating === 0 ? null : avgRating}
                 {totalRating=== 0 ? 'Not Rated' : <span>({reviews?.length})</span>}
                 </span>
 
@@ -134,6 +135,9 @@ const TourDetails = () => {
 
                </div>
                
+               </Col>
+               <Col lg="4">
+               <Booking tour={tour} avgRating={avgRating}/>
                </Col>
             
             </Row>
