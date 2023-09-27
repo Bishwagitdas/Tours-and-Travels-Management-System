@@ -3,6 +3,9 @@ import {
     createTour,
     updateTour,
     deleteTour,
+    getSingleTour,
+    getAllTour,
+    getTourBySearch,
    
 
  } from "./../controllers/tourController.js"
@@ -18,8 +21,10 @@ router.put("/:id", updateTour);
 //delete tour
 router.delete("/:id", deleteTour);
 // //getSingle tour
-// router.get("/:id", geSingleTour);
+router.get("/:id", getSingleTour);
 // //getAll tour
-// router.get("/", getAllTour);
+router.get("/", getAllTour);
+// //get tour by search
+router.get("/search/getTourBySearch", getTourBySearch);
 
 export default router;
